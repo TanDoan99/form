@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Form đăng ký thành viên VinaEnter Edu</title>
+	<link rel="stylesheet" type="text/css" href="assets/styles.css" />
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+	<script type="text/javascript" src="jquerymin.js"></script>
+	<script type="text/javascript" src="jquery.validate.min.js"></script>
+</head>
+<body>
+	<form class="form">
+		<h2>ĐĂNG KÝ THÀNH VIÊN VINAENTER EDU</h2>	
+		<p>
+			<label>Tên truy cập (*):</label>
+			<input name="username" value="" type="text" placeholder="Choose your username" />
+		</p>
+		<p>
+			<label>Mật khẩu (*):</label>
+			<input name="password" value="" type="password" placeholder="Creat a new password" />
+		</p>
+		<p>
+			<label>Xác nhận mật khẩu (*):</label>
+			<input name="repassword" value="" type="password" placeholder="Confirm your password" />
+		</p>
+		<p>
+			<label>Họ và tên (*):</label>
+			<input name="fullname" value="" type="text" placeholder="Write your name here.." />
+		</p>
+		<p>
+			<label>Sinh nhật (*):</label>
+			<input name="birthday" value="" type="text" placeholder="Tell us your birth day" />
+		</p>
+		<p>
+			<label>Giới tính (*):</label>
+			<p>
+				Nam</span><input type="radio" value="nam" name="gioitinh" />
+				Nữ</span><input type="radio" value="nu" name="gioitinh" />
+			</p>
+		</p>
+		<p>
+			<label>Địa chỉ (*):</label>
+			<select name="city">
+				<option value="">--[Chọn]--</option>
+				<option value="danang">Đà Nẵng</option>
+				<option value="hochiminh">Hồ Chí Minh</option>
+				<option value="hanoi">Hà Nội</option>
+			</select>
+		</p>
+		<p>
+			<label>Số điện thoại:</label>
+			<input name="phone" value="" type="text" placeholder="Enter your phone number.." />
+		</p>
+		<p>
+			<label>Email (*):</label>
+			<input name="email" value="" type="text" placeholder="Let us know how to contact you back.." />
+		</p>
+		<p>
+			<label>Facebook:</label>
+			<input name="facebook" value="" type="text" placeholder="Enter your facebook profile" />
+		</p>
+		<p>
+			<label>Thông tin thêm:(*)</label>
+			<textarea name="moreinfo" placeholder="What would you like to tell us.."></textarea>
+		</p>
+		<p>
+			<input type="submit" name="submit" value="ĐĂNG KÝ" />
+			<input type="reset" name="reset" value="RESET" />
+		</p>
+		<div class="contact">
+			<span class="fa fa-phone"></span>0905.051.720
+			<span class="fa fa-envelope-o"></span>info@vinaenter.edu.vn
+		</div>
+	</form>
+	<script type="text/javascript">
+		$(document).ready(function (){
+			$('.form').validate({
+				rules:{
+					"username":{
+						required: true,
+						minlength: 6,
+						maxlength: 32,
+					},
+					"password":{
+						required: true,
+						minlength: 6,
+					},
+					"repassword":{
+						required: true,
+						minlength: 6,
+						equalTo: "password",
+					},
+					"fullname":{
+						required: true,
+					},
+					"birthday":{
+						required: true,
+						date: true,
+					},
+					"gioitinh":{
+						required: true,
+					},
+					"city":{
+						required: true,
+					},
+					"phone":{
+						required: true,
+						number: true,
+					},
+					"email":{
+						required: true,
+						email: true,
+					},
+					"facebook":{
+						required: true,
+						url: true,
+					},
+					"moreinfo":{
+						required: true,
+					}
+				},
+				messages:{
+					"username":{
+						required: "Vui lòng nhập username",
+						minlength: "Vui lòng nhập ít nhất 6 ký tự",
+						maxlength: "Vui lòng nhập tối đa 32 ký tự",
+					},
+					"password":{
+						required: "Vui lòng nhập password",
+						minlength: "Vui lòng nhập ít nhất 6 ký tự",
+					},
+					"repassword":{
+						required: "Vui lòng nhập lại mật khẩu",
+						minlength: "Vui lòng nhập ít nhất 6 ký tự",
+						equalTo: "Mật khẩu phải trùng với ô password"
+					},
+					"fullname":{
+						required: "Vui lòng nhập họ và tên",
+					},
+					"birthday":{
+						required: "Vui lòng nhập sinh nhật",
+						date:"Ngày sinh phải đúng định dạng",
+					},
+					"gioitinh":{
+						required: "Vui lòng chọn giới tính",
+					},
+					"city":{
+						required: "Vui lòng chọn địa chỉ",
+					},
+					"phone":{
+						required: "Số điện thoại phải là số",
+					},
+					"email":{
+						required: "Vui lòng nhập email",
+						email:"Vui lòng nhập email đúng dịnh dạng",
+					},
+					"facebook":{
+						url:"Facebook phải đúng dịnh dạng",
+					},
+					"moreinfo":{
+						required: "Vui lòng nhập thông tin thêm",
+					},
+				},
+			});
+		});
+		
+	</script>
+	
+</body>
+</html>
